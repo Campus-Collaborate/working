@@ -5,8 +5,8 @@ import Loginform from './components/login/Loginform';
 function App() {
   return (
    <div>
-    {/* <Loginform/> */}
-    <QueryPage />
+    <Loginform/>
+    {/* <QueryPage /> */}
 
    </div>
   );

@@ -1,6 +1,15 @@
 // import "./App.css";
 import React from "react";
-import './Loginform.css';
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { getDatabase, ref, set } from "firebase/database";
+import { auth } from "../../firebaseConfig";
+import { getAuth, GoogleAuthProvider, OAuthProvider, signInWithPopup } from "firebase/auth";
+import Profile from "./Profile.js";
+import '../../assets/css/Loginform.css';
+import SiteLogo from '../../assets/images/LoginImages/websiteLogo.png';
+import OutlookIcon from '../../assets/images/LoginImages/outlookIcon.png';
+
 
 const Loginform = () => {
   const [showProfile, setShowProfile] = useState(false);
@@ -48,17 +57,20 @@ const Loginform = () => {
       });
   }
   return (
-    // width:100%
-    <div style={{ position: "absolute", display: "flex", width: "100%" }}> 
+    <>
+    <div>
+      {showProfile && <Profile />}
+    </div>
+    <div style={{ position: "absolute", width: "100%",  display:showProfile ? "none" : "flex"}}> 
       <div className="img">
         <img className="cc" src={SiteLogo} alt="cc Logo" />
       </div>
-      <div className="wrapper">~
+      <div className="wrapper">
         <h1>Create Account</h1>
         <div className="outlookLogin">
           <div className="outlook" style={{border: "0.25vh solid rgb(205, 201, 201)", padding: "1.5%", margin: "1vw"}}>
-          <img className="Outlook-logo" src={require('./logo-outlook-34044.png')} alt="Outlook Logo" />
-            <span className="Outlook-title">Continue with Outlook</span>
+          <img className="Outlook-logo" src={OutlookIcon} alt="Outlook Logo" />
+            <span className="Outlook-title" onClick={handleclick}>Continue with Outlook</span>
             </div>
           <div className="or">-OR-</div>
         </div>
