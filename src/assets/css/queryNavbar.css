@@ -1,0 +1,44 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+.container{
+    position: relative;
+    height: 10vh;
+    margin-top:2vw;
+
+}
+.queryNavbtn{
+    display: inline-block;
+    margin: 0.2vw 0.2vw;
+    border:0.3vh solid transparent;
+    border-radius: 7vh;
+    padding: 0.2% 1.5%;
+    background-color: white;
+    
+}
+.filter{
+    display:inline-block;
+    position: absolute;
+    right: 10vw;
+}
+.one{
+    width: 25.2vw;
+    background-color: gainsboro;
+    border:0.3vh solid transparent;
+    margin-top: 0.5%;
+    border-radius: 7vh;
+    padding: none;
+    font-size: larger;
+}
+
+.two{
+    color: rgb(18, 189, 189);
+    margin: 1.2%;
+    position: absolute;
+    right: 0.5vw;
+    border:0.3vh solid black;
+    border-radius: 7vh;
+    padding: 0.2% 1.5%;
+    font-size: larger;
+}

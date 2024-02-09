@@ -1,21 +1,25 @@
 // import "./App.css";
 import React from "react";
-import './Loginform.css';
+import '../../assets/css/Loginform.css';
+import IITGImg from '../../assets/images/LoginImages/IITG.jpg';
+import SiteLogo from '../../assets/images/LoginImages/websiteLogo.png';
+import OutlookIcon from '../../assets/images/LoginImages/outlookIcon.png';
+
 
 const Loginform = () => {
   return (
     // width:100%
-    <div style={{ position: "absolute", display: "flex", width: "100%" }}> 
+    <div style={{ position: "absolute", display: "flex", width: "100%" }}>
       <div className="img">
-        <img className="cc" src={require('./Group 18.png')} alt="cc Logo" />
+        <img className="cc" src={SiteLogo} alt="cc Logo" />
       </div>
       <div className="wrapper">
         <h1>Create Account</h1>
         <div className="outlookLogin">
-          <div className="outlook" style={{border: "0.25vh solid rgb(205, 201, 201)", padding: "1.5%", margin: "1vw"}}>
-          <img className="Outlook-logo" src={require('./logo-outlook-34044.png')} alt="Outlook Logo" />
+          <div className="outlook" style={{ border: "0.25vh solid rgb(205, 201, 201)", padding: "1.5%", margin: "1vw" }}>
+            <img className="Outlook-logo" src={OutlookIcon} alt="Outlook Logo" />
             <span className="Outlook-title">Continue with Outlook</span>
-            </div>
+          </div>
           <div className="or">-OR-</div>
         </div>
         <form action="">
@@ -37,7 +41,7 @@ const Loginform = () => {
             </p>
           </div>
         </form>
-        
+
       </div>
     </div>
   );

@@ -25,7 +25,7 @@
   
   .img {
     float: left;
-    background-image: url(IITG.jpg);
+    background-image: url('../images/LoginImages/IITG.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
