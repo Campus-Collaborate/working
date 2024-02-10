@@ -1,14 +1,36 @@
+import React from "react"
+
+// import {app} from "./firebase"
+// import SignupPage from "./pages/Signup"
+// import LoginPage from "./pages/Login"
+// import ProfilePage from "./pages/profilePage"
+import Home from "./Pages/home"
+import Navbar from "./components/Navbar/Navbar"
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom"; 
+// import {FirebaseProvider} from "./Contexts/firebase"
+
 import './App.css';
-import QueryPage from './Pages/queryPage';
-import Loginform from './components/login/Loginform';
+
+// const db = getDatabase(app)
+// const auth = getAuth(app)
 
 function App() {
-  return (
-   <div>
-    <Loginform/>
-    {/* <QueryPage /> */}
 
-   </div>
+  return (
+    <div className="App">
+       {/* <FirebaseProvider> */}
+    <Router>
+      <Routes>
+
+          <Route path="" element={<Home />}/>
+          {/* <Route path="/signup" element={<SignupPage />}/>
+          <Route path="/login" element={<LoginPage />}/>
+          <Route path = "/profilePage" element = {<ProfilePage/>}/> */}
+      </Routes>
+
+    </Router>
+       {/* </FirebaseProvider> */}
+    </div>
   );
 }
 
