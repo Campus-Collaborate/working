@@ -12,6 +12,24 @@ import OutlookIcon from '../../assets/images/LoginImages/outlookIcon.png';
 
 
 const Loginform = () => {
+  
+  const [name,setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const Submit=async(e)=>{
+    try {
+      const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+      // Login successful
+      console.log('Login successful', userCredential.user);
+      // Redirect or perform any other action upon successful login
+    }catch (error) {
+        // Handle login error
+        console.error('Login error:', error.message);
+    }
+  }
+
+
+
   const [showProfile, setShowProfile] = useState(false);
   const handleclick = async (e) => {
     const provider = new OAuthProvider('microsoft.com');
@@ -76,16 +94,16 @@ const Loginform = () => {
         </div>
         <form action="">
           <div className="input-box">
-            <input type="text" placeholder="Full Name" required></input>
+            <input type="text" placeholder="Full Name" required value={name} onChange={(e) => setName(e.target.value)}></input>
           </div>
           <div className="input-box">
-            <input type="email" placeholder="Email Address" required></input>
+            <input type="email" placeholder="Email Address" required value={email} onChange={(e) => setEmail(e.target.value)}></input>
           </div>
           <div className="input-box">
-            <input type="password" placeholder="Password" required></input>
+            <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)}></input>
           </div>
 
-          <button type="submit">Create Account</button>
+          <button type="submit" onClick={Submit()}>Create Account</button>
 
           <div className="login-link">
             <p>
